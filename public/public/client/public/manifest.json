@@ -1,0 +1,88 @@
+{
+  "name": "FutureBoard - AI-Powered Kanban",
+  "short_name": "FutureBoard",
+  "description": "AI-Powered Productivity Kanban Board with Offline Support",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0A0B",
+  "theme_color": "#00D9FF",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["productivity", "business", "utilities"],
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9InVybCgjZ3JhZGllbnQwX2xpbmVhcl8xXzEpIi8+CjxwYXRoIGQ9Ik05NiA0OEw3MiA3Mkg5NkwxMjAgNzJMOTYgNDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNzIgOTZINDhMNzIgMTIwTDk2IDk2SDcyWiIgZmlsbD0id2hpdGUiLz4KPHA+aCBkPSJNMTQ0IDk2SDEyMEwxNDQgMTIwTDE2OCA5NkgxNDRaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNOTYgMTQ0TDcyIDE2OEg5NkwxMjAgMTY4TDk2IDE0NFoiIGZpbGw9IndoaXRlIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MF9saW5lYXJfMV8xIiB4MT0iMCIgeTE9IjAiIHgyPSIxOTIiIHkyPSIxOTIiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzAwRDlGRiIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM4QjVDRjYiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4K",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iNjQiIGZpbGw9InVybCgjZ3JhZGllbnQwX2xpbmVhcl8xXzEpIi8+CjxwYXRoIGQ9Ik0yNTYgMTI4TDE5MiAxOTJIMjU2TDMyMCAxOTJMMjU2IDEyOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xOTIgMjU2SDEyOEwxOTIgMzIwTDI1NiAyNTZIMTkyWiIgZmlsbD0id2hpdGUiLz4KPHA+aCBkPSJNMzg0IDI1NkgzMjBMMzg0IDMyMEw0NDggMjU2SDM4NFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yNTYgMzg0TDE5MiA0NDhIMjU2TDMyMCA0NDhMMjU2IDM4NFoiIGZpbGw9IndoaXRlIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MF9saW5lYXJfMV8xIiB4MT0iMCIgeTE9IjAiIHgyPSI1MTIiIHkyPSI1MTIiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzAwRDlGRiIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM4QjVDRjYiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4K",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9IiMwQTBBMEIiLz4KPHA+aCBkPSJNOTYgNDhMNzIgNzJIOTZMMTIwIDcyTDk2IDQ4WiIgZmlsbD0iIzAwRDlGRiIvPgo8cGF0aCBkPSJNNzIgOTZINDhMNzIgMTIwTDk2IDk2SDcyWiIgZmlsbD0iIzAwRDlGRiIvPgo8cGF0aCBkPSJNMTQ0IDk2SDEyMEwxNDQgMTIwTDE2OCA5NkgxNDRaIiBmaWxsPSIjMDBEOUZGIi8+CjxwYXRoIGQ9Ik05NiAxNDRMNzIgMTY4SDk2TDEyMCAxNjhMOTYgMTQ0WiIgZmlsbD0iIzAwRDlGRiIvPgo8L3N2Zz4K",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4MCIgaGVpZ2h0PSI3MjAiIHZpZXdCb3g9IjAgMCAxMjgwIDcyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjEyODAiIGhlaWdodD0iNzIwIiBmaWxsPSJ1cmwoI2dyYWRpZW50MF9yYWRpYWxfMV8xKSIvPgo8cmVjdCB4PSI2NCIgeT0iMTI4IiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQ2NCIgcng9IjE2IiBmaWxsPSJyZ2JhKDQ1LCA0NSwgNTgsIDAuMykiIHN0cm9rZT0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjEpIi8+CjxyZWN0IHg9IjQ5NiIgeT0iMTI4IiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQ2NCIgcng9IjE2IiBmaWxsPSJyZ2JhKDQ1LCA0NSwgNTgsIDAuMykiIHN0cm9rZT0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjEpIi8+CjxyZWN0IHg9IjkyOCIgeT0iMTI4IiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQ2NCIgcng9IjE2IiBmaWxsPSJyZ2JhKDQ1LCA0NSwgNTgsIDAuMykiIHN0cm9rZT0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjEpIi8+CjxkZWZzPgo8cmFkaWFsR3JhZGllbnQgaWQ9ImdyYWRpZW50MF9yYWRpYWxfMV8xIiBjeD0iNTAlIiBjeT0iMCUiIHI9IjEwMCUiPgo8c3RvcCBzdG9wLWNvbG9yPSJoc2woMjYyIDgzJSAxNSUpIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iaHNsKDI0MCA2JSA0JSkiLz4KPC9yYWRpYWxHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4K",
+      "sizes": "1280x720",
+      "type": "image/svg+xml",
+      "label": "Kanban Board View"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzUwIiBoZWlnaHQ9IjEzMzQiIHZpZXdCb3g9IjAgMCA3NTAgMTMzNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9Ijc1MCIgaGVpZ2h0PSIxMzM0IiBmaWxsPSJ1cmwoI2dyYWRpZW50MF9yYWRpYWxfMV8xKSIvPgo8cmVjdCB4PSIzMiIgeT0iMTI4IiB3aWR0aD0iNjg2IiBoZWlnaHQ9IjIwMCIgcng9IjE2IiBmaWxsPSJyZ2JhKDQ1LCA0NSwgNTgsIDAuMykiIHN0cm9rZT0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjEpIi8+CjxyZWN0IHg9IjMyIiB5PSIzNjAiIHdpZHRoPSI2ODYiIGhlaWdodD0iMjAwIiByeD0iMTYiIGZpbGw9InJnYmEoNDUsIDQ1LCA1OCwgMC4zKSIgc3Ryb2tlPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMSkiLz4KPHJlY3QgeD0iMzIiIHk9IjU5MiIgd2lkdGg9IjY4NiIgaGVpZ2h0PSIyMDAiIHJ4PSIxNiIgZmlsbD0icmdiYSg0NSwgNDUsIDU4LCAwLjMpIiBzdHJva2U9InJnYmEoMjU1LCAyNTUsIDI1NSwgMC4xKSIvPgo8ZGVmcz4KPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkaWVudDBfcmFkaWFsXzFfMSIgY3g9IjUwJSIgY3k9IjAlIiByPSIxMDAlIj4KPHN0b3Agc3RvcC1jb2xvcj0iaHNsKDI2MiA4MyUgMTUlKSIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9ImhzbCgyNDAgNiUgNCUpIi8+CjwvcmFkaWFsR3JhZGllbnQ+CjwvZGVmcz4KPC9zdmc+Cg==",
+      "sizes": "750x1334",
+      "type": "image/svg+xml",
+      "label": "Mobile Kanban View"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Add Task",
+      "short_name": "Add",
+      "description": "Quickly add a new task",
+      "url": "/?action=add-task",
+      "icons": [
+        {
+          "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9Ijk2IiBoZWlnaHQ9Ijk2IiByeD0iMTIiIGZpbGw9IiMwMEQ5RkYiLz4KPHA+aCBkPSJNNDggMjRWNzIiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0yNCA0OEg3MiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "History",
+      "short_name": "History",
+      "description": "View completed tasks",
+      "url": "/?view=history",
+      "icons": [
+        {
+          "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9Ijk2IiBoZWlnaHQ9Ijk2IiByeD0iMTIiIGZpbGw9IiM4QjVDRjYiLz4KPGNpcmNsZSBjeD0iNDgiIGN5PSI0OCIgcj0iMjAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iNCIvPgo8cGF0aCBkPSJNNDggMzZWNDhMMzYgNjAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjwvdnZnPgo=",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false,
+  "protocol_handlers": [
+    {
+      "protocol": "web+futureboard",
+      "url": "/?task=%s"
+    }
+  ],
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  }
+}
