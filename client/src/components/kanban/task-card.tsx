@@ -31,6 +31,23 @@ export function TaskCard({ task, onEdit, onDelete, isDragging }: TaskCardProps) 
     return initials || "??";
   };
 
+  const getCardBackground = (priority: string, status: string) => {
+    if (status === "done") {
+      return "bg-gradient-to-br from-slate-600 to-slate-700 text-white";
+    }
+    
+    switch (priority) {
+      case "high":
+        return "bg-gradient-to-br from-rose-700 to-red-800 text-white";
+      case "medium":
+        return "bg-gradient-to-br from-amber-700 to-orange-800 text-white";
+      case "low":
+        return "bg-gradient-to-br from-emerald-700 to-teal-800 text-white";
+      default:
+        return "bg-gradient-to-br from-indigo-700 to-purple-800 text-white";
+    }
+  };
+
   const getAssigneeGradient = (initials?: string | null) => {
     const colors = [
       "from-primary to-secondary",
@@ -44,13 +61,13 @@ export function TaskCard({ task, onEdit, onDelete, isDragging }: TaskCardProps) 
 
   return (
     <div 
-      className={`task-card bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl p-4 cursor-pointer transition-all duration-200 shadow-lg hover:shadow-xl hover:border-border ${
-        isDragging ? "opacity-50 rotate-3 scale-105" : "hover:scale-[1.02] hover:bg-card/90"
-      } ${task.status === "done" ? "opacity-75 bg-muted/50" : ""}`}
+      className={`task-card ${getCardBackground(task.priority, task.status)} backdrop-blur-sm border border-white/20 rounded-xl p-4 cursor-pointer transition-all duration-200 shadow-lg hover:shadow-xl hover:border-white/30 hover:brightness-110 ${
+        isDragging ? "opacity-50 rotate-3 scale-105" : "hover:scale-[1.02]"
+      }`}
       data-testid={`task-card-${task.id}`}
     >
       <div className="flex justify-between items-start mb-3">
-        <h4 className="font-semibold text-foreground pr-2 leading-tight" data-testid="text-task-title">
+        <h4 className="font-semibold text-white pr-2 leading-tight drop-shadow-sm" data-testid="text-task-title">
           {task.title}
         </h4>
         <div className="flex space-x-2 flex-shrink-0">
@@ -65,7 +82,7 @@ export function TaskCard({ task, onEdit, onDelete, isDragging }: TaskCardProps) 
                   e.stopPropagation();
                   onEdit();
                 }}
-                className="text-muted-foreground hover:text-primary text-sm h-6 w-6 p-0"
+                className="text-white/70 hover:text-white text-sm h-6 w-6 p-0 drop-shadow-sm"
                 data-testid="button-edit-task"
               >
                 <Edit className="h-3 w-3" />
@@ -77,7 +94,7 @@ export function TaskCard({ task, onEdit, onDelete, isDragging }: TaskCardProps) 
                   e.stopPropagation();
                   onDelete();
                 }}
-                className="text-muted-foreground hover:text-destructive text-sm h-6 w-6 p-0"
+                className="text-white/70 hover:text-red-200 text-sm h-6 w-6 p-0 drop-shadow-sm"
                 data-testid="button-delete-task"
               >
                 <Trash2 className="h-3 w-3" />
@@ -88,7 +105,7 @@ export function TaskCard({ task, onEdit, onDelete, isDragging }: TaskCardProps) 
       </div>
       
       {task.description && (
-        <p className="text-muted-foreground text-sm mb-3" data-testid="text-task-description">
+        <p className="text-white/90 text-sm mb-3 drop-shadow-sm" data-testid="text-task-description">
           {task.description}
         </p>
       )}
@@ -96,8 +113,8 @@ export function TaskCard({ task, onEdit, onDelete, isDragging }: TaskCardProps) 
       {task.progress !== undefined && task.progress !== null && task.progress > 0 && task.status === "in-progress" && (
         <div className="mb-3">
           <div className="flex justify-between items-center mb-1">
-            <span className="text-xs text-muted-foreground">Progress</span>
-            <span className="text-xs text-primary" data-testid="text-task-progress">
+            <span className="text-xs text-white/80 drop-shadow-sm">Progress</span>
+            <span className="text-xs text-white font-medium drop-shadow-sm" data-testid="text-task-progress">
               {task.progress}%
             </span>
           </div>
@@ -116,12 +133,12 @@ export function TaskCard({ task, onEdit, onDelete, isDragging }: TaskCardProps) 
             {task.status === "done" ? "Completed" : task.priority.charAt(0).toUpperCase() + task.priority.slice(1)}
           </span>
           {task.dueDate && (
-            <span className="text-xs text-muted-foreground" data-testid="text-task-due-date">
+            <span className="text-xs text-white/80 drop-shadow-sm" data-testid="text-task-due-date">
               Due {formatDate(task.dueDate)}
             </span>
           )}
           {task.completedAt && (
-            <span className="text-xs text-muted-foreground" data-testid="text-task-completed-date">
+            <span className="text-xs text-white/80 drop-shadow-sm" data-testid="text-task-completed-date">
               Completed {formatDate(task.completedAt)}
             </span>
           )}
