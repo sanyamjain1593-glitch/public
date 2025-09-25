@@ -91,9 +91,11 @@ body {
 }
 
 .navbar-glass {
-  background: rgba(10, 10, 11, 0.8);
+  background: linear-gradient(135deg, hsl(var(--primary) / 0.2) 0%, hsl(var(--secondary) / 0.2) 100%), 
+              rgba(10, 10, 11, 0.85);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid hsl(var(--primary) / 0.4);
+  box-shadow: 0 8px 25px hsl(var(--primary) / 0.3);
 }
 
 .kanban-container {
