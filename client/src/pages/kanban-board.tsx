@@ -37,7 +37,7 @@ export default function KanbanBoardPage() {
         onToggleThemeSelector={() => setIsThemeSelectorOpen(true)}
       />
       
-      <main className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+      <main className="p-3 sm:p-4 md:p-6 lg:p-8 min-h-screen">
         {currentView === "kanban" ? (
           <KanbanBoard
             onAddTask={handleAddTask}

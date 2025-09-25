@@ -132,40 +132,47 @@ export function KanbanBoard({ onAddTask, onEditTask }: KanbanBoardProps) {
   }
 
   return (
-    <div className="kanban-view">
-      {/* Header with Add Task */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
-        <div>
-          <h2 className="text-3xl font-bold mb-2">Today's Board</h2>
-          <p className="text-muted-foreground">
-            <span data-testid="text-current-date">{getCurrentDate()}</span> • 
-            <span data-testid="text-task-stats" className="ml-1">{getTaskStats()}</span>
-          </p>
+    <div className="kanban-view h-full">
+      {/* Mobile-Optimized Header */}
+      <div className="flex flex-col space-y-3 sm:space-y-4 mb-4 sm:mb-6 md:mb-8">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-4">
+          <div className="min-w-0 flex-1">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2 truncate">Today's Board</h2>
+            <div className="text-xs sm:text-sm text-muted-foreground">
+              <span data-testid="text-current-date" className="block sm:inline">{getCurrentDate()}</span>
+              <span className="hidden sm:inline"> • </span>
+              <span data-testid="text-task-stats" className="block sm:inline">{getTaskStats()}</span>
+            </div>
+          </div>
+          
+          <Button
+            onClick={() => onAddTask()}
+            className="floating-button text-background font-medium w-full sm:w-auto shrink-0"
+            size="sm"
+            data-testid="button-add-task"
+          >
+            <Plus className="h-4 w-4 mr-2" />
+            Add Task
+          </Button>
         </div>
-        
-        <Button
-          onClick={() => onAddTask()}
-          className="floating-button text-background font-medium"
-          data-testid="button-add-task"
-        >
-          <Plus className="h-4 w-4 mr-2" />
-          Add Task
-        </Button>
       </div>
 
-      {/* Kanban Columns */}
+      {/* Mobile-Optimized Kanban Columns - Horizontal scroll on mobile */}
       <DragDropContext onDragEnd={handleDragEnd}>
-        <div className="kanban-container flex flex-col lg:flex-row gap-6 overflow-x-auto pb-6">
-          {columns.map(column => (
-            <KanbanColumn
-              key={column.id}
-              column={column}
-              tasks={getTasksByStatus(column.id)}
-              onAddTask={() => onAddTask(column.id)}
-              onEditTask={onEditTask}
-              onDeleteTask={handleDeleteTask}
-            />
-          ))}
+        <div className="kanban-container">
+          <div className="flex gap-3 sm:gap-4 md:gap-6 overflow-x-auto pb-4 md:pb-6 min-h-0">
+            {columns.map(column => (
+              <div key={column.id} className="flex-shrink-0 w-72 sm:w-80 md:w-96 lg:flex-1 lg:w-auto">
+                <KanbanColumn
+                  column={column}
+                  tasks={getTasksByStatus(column.id)}
+                  onAddTask={() => onAddTask(column.id)}
+                  onEditTask={onEditTask}
+                  onDeleteTask={handleDeleteTask}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </DragDropContext>
     </div>
