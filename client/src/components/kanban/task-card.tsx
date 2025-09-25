@@ -12,10 +12,10 @@ interface TaskCardProps {
 export function TaskCard({ task, onEdit, onDelete, isDragging }: TaskCardProps) {
   const getPriorityColor = (priority: string) => {
     switch (priority) {
-      case "high": return "bg-primary/20 text-primary";
-      case "medium": return "bg-secondary/20 text-secondary";
-      case "low": return "bg-accent/20 text-accent";
-      default: return "bg-muted/20 text-muted-foreground";
+      case "high": return "bg-red-500/20 text-red-600 border border-red-500/30";
+      case "medium": return "bg-yellow-500/20 text-yellow-600 border border-yellow-500/30";
+      case "low": return "bg-green-500/20 text-green-600 border border-green-500/30";
+      default: return "bg-muted/20 text-muted-foreground border border-muted/30";
     }
   };
 
@@ -44,13 +44,13 @@ export function TaskCard({ task, onEdit, onDelete, isDragging }: TaskCardProps) 
 
   return (
     <div 
-      className={`task-card rounded-xl p-4 cursor-pointer transition-all ${
-        isDragging ? "opacity-50 rotate-3" : "hover:scale-[1.02]"
-      } ${task.status === "done" ? "opacity-75" : ""}`}
+      className={`task-card bg-card/80 backdrop-blur-sm border border-border/50 rounded-xl p-4 cursor-pointer transition-all duration-200 shadow-lg hover:shadow-xl hover:border-border ${
+        isDragging ? "opacity-50 rotate-3 scale-105" : "hover:scale-[1.02] hover:bg-card/90"
+      } ${task.status === "done" ? "opacity-75 bg-muted/50" : ""}`}
       data-testid={`task-card-${task.id}`}
     >
       <div className="flex justify-between items-start mb-3">
-        <h4 className="font-medium text-foreground pr-2" data-testid="text-task-title">
+        <h4 className="font-semibold text-foreground pr-2 leading-tight" data-testid="text-task-title">
           {task.title}
         </h4>
         <div className="flex space-x-2 flex-shrink-0">
@@ -93,7 +93,7 @@ export function TaskCard({ task, onEdit, onDelete, isDragging }: TaskCardProps) 
         </p>
       )}
       
-      {task.progress !== undefined && task.progress > 0 && task.status === "in-progress" && (
+      {task.progress !== undefined && task.progress !== null && task.progress > 0 && task.status === "in-progress" && (
         <div className="mb-3">
           <div className="flex justify-between items-center mb-1">
             <span className="text-xs text-muted-foreground">Progress</span>
@@ -101,9 +101,9 @@ export function TaskCard({ task, onEdit, onDelete, isDragging }: TaskCardProps) 
               {task.progress}%
             </span>
           </div>
-          <div className="w-full bg-muted/20 rounded-full h-2">
+          <div className="w-full bg-muted/30 rounded-full h-2.5 overflow-hidden border border-muted/40">
             <div 
-              className="bg-gradient-to-r from-primary to-secondary h-2 rounded-full transition-all" 
+              className="bg-gradient-to-r from-blue-500 to-purple-600 h-full rounded-full transition-all duration-300 shadow-sm" 
               style={{ width: `${task.progress}%` }}
             />
           </div>
